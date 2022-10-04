@@ -18,12 +18,12 @@ mongoose.connect(process.env.MONGODB_URL).then(() => {
 const app = express();
 
 //middlewares
-app.use(cors());
+app.use(cors()); 
 app.use(express.json());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}))
-app.use(morgan("dev"));
+// app.use(morgan("dev"));
 
 //routes
  app.use('/api/products/', productRouter);
